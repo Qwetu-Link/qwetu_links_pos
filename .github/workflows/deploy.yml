@@ -28,7 +28,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /domains/pos.qwetulinks.co.ke/public_html # For addon domains
+          server-dir: /domains/pos.qwetulinks.co.ke/public_html/ # For addon domains
           timeout: 86400000
           log-level: standard
 
