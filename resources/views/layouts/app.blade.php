@@ -9,7 +9,7 @@
 
     <!-- SEO Meta Tags -->
     @yield('meta')
-    <meta name="author" content="Kodi It Team">
+    <meta name="author" content="Qwetu Link Team">
     <meta name="robots" content="index, follow">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
