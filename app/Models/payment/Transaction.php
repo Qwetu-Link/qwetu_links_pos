@@ -28,6 +28,7 @@ class Transaction extends Model
         'notes',
         'business_id',
         'branch_id',
+        'invoice_id',
     ];
 
     protected static function boot(): void
@@ -67,5 +68,10 @@ class Transaction extends Model
         $lastNumber = (int) substr($last->transaction_id, 4);
 
         return 'TXN-'.str_pad($lastNumber + 1, 4, '0', STR_PAD_LEFT);
+    }
+
+    public function payment ()
+    {
+        return $this->belongsTo(Invoice::class);
     }
 }
