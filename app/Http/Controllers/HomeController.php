@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -17,4 +17,19 @@ class HomeController extends Controller
 
         return view('welcome', compact('seo'));
     }
+
+    public function login()
+    {
+        return view('auth/login');
+    }
+
+    public function dashboard()
+    {
+        return view('admin.dashboard');
+    }
+
+    // public function catalog()
+    // {
+    //     return view('user.elements.products.product');
+    // }
 }

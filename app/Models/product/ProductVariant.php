@@ -39,9 +39,14 @@ class ProductVariant extends Model
                 $model->id = self::generateRandomID();
             }
 
-            // Business ID (CAT-0001)
+            // Variant ID (CAT-0001)
             if (empty($model->variant_id)) {
                 $model->variant_id = self::generateVariantId();
+            }
+
+            // SKU generation
+            if (empty($model->sku)) {
+                $model->sku = self::generateSKU($model);
             }
         });
     }
@@ -65,6 +70,28 @@ class ProductVariant extends Model
         $lastNumber = (int) substr($last->variant_id, 4);
 
         return 'VAR-'.str_pad($lastNumber + 1, 4, '0', STR_PAD_LEFT);
+    }
+
+    private static function generateSKU($model)
+    {
+        // $productId = $model->product_id ?? 'VAR';
+
+        $colorPart = $model->color
+            ? strtoupper(substr($model->color, 0, 2))
+            : 'GEN';
+
+        $sizePart = $model->size
+            ? strtoupper($model->size)
+            : 'NA';
+
+        // Ensure uniqueness
+        do {
+            $random = strtoupper(substr(uniqid(), -4));
+            $sku = "VAR-{$colorPart}-{$sizePart}-{$random}";
+            // $sku = "PRD-{$productId}-{$colorPart}-{$sizePart}-{$random}";
+        } while (self::where('sku', $sku)->exists());
+
+        return $sku;
     }
 
     public function product()

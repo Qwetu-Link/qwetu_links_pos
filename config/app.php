@@ -28,6 +28,8 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
+    'api_url' => env('APP_URL') . '/api/v1',
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode

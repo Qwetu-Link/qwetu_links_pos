@@ -33,8 +33,6 @@ return new class extends Migration
             $table->string('file_path')->nullable();
             $table->boolean('is_sent')->default(false);
 
-            $table->timestamps();
-
             $table->foreign('business_id')->references('id')->on('businesses')->onDelete('cascade');
             $table->foreign('order_id')->references('id')->on('orders')->cascadeOnDelete();
             $table->foreign('customer_id')->references('id')->on('customers')->cascadeOnDelete();

@@ -23,7 +23,22 @@ class StoreProductVariantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'product_id' => 'required|exists:product_catalogs,id',
+            'color' => 'nullable|string|max:50',
+            'size' => 'nullable|string|max:20',
+            'buy_price' => 'required|numeric|min:0',
+            'sell_price' => 'required|numeric|min:0|gte:buy_price',
+            'is_available' => 'required|boolean',
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'is_available' => $this->isAvailable,
+            'buy_price' => $this->buyPrice,
+            'sell_price' => $this->sellPrice,
+            'product_id' => $this->productId,
+        ]);
     }
 }

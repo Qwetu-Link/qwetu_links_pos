@@ -5,6 +5,24 @@ namespace App\Models\account {
     /**
      * App\Models\account\Branch
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property bool $is_active
+     * @property string $business_id
+     * @property string $location
+     * @property string|null $branch_contact
+     * @property string|null $branch_email
+     * @property string $branch_name
+     * @property string $id
+     * @method static \Illuminate\Database\Eloquent\Builder<Branch>|Branch whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Branch>|Branch whereBranchName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Branch>|Branch whereBranchEmail($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Branch>|Branch whereBranchContact($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Branch>|Branch whereLocation($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Branch>|Branch whereBusinessId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Branch>|Branch whereIsActive($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Branch>|Branch whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Branch>|Branch whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Branch>|Branch newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Branch>|Branch newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Branch>|Branch query()
@@ -323,12 +341,42 @@ namespace App\Models\account {
     /**
      * App\Models\account\Business
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property bool $is_active
+     * @property string|null $mpesa_till_no
+     * @property string|null $mpesa_paybill
+     * @property string|null $account_name
+     * @property string|null $account_number
+     * @property string|null $branch
+     * @property string|null $bank_name
+     * @property string|null $tax_pin
+     * @property mixed $tax_settings
+     * @property string $email
+     * @property string|null $contact
+     * @property string|null $location
+     * @property string $business_name
+     * @property string $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\auth\User> $users
      * @property-read int|null $users_count
-     * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\auth\Role> $roles
-     * @property-read int|null $roles_count
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\account\Branch> $branches
      * @property-read int|null $branches_count
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereBusinessName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereLocation($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereContact($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereEmail($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereTaxSettings($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereTaxPin($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereBankName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereBranch($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereAccountNumber($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereAccountName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereMpesaPaybill($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereMpesaTillNo($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereIsActive($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Business>|Business query()
@@ -647,6 +695,44 @@ namespace App\Models\account {
     /**
      * App\Models\account\Customer
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property bool $is_active
+     * @property string $business_id
+     * @property string|null $branch_id
+     * @property string|null $address
+     * @property string $last_purchase
+     * @property string $joined_date
+     * @property string $segment
+     * @property string $risk_level
+     * @property mixed $payment_score
+     * @property mixed $active_installments
+     * @property float $total_spent
+     * @property mixed $total_orders
+     * @property string $phone
+     * @property string|null $email
+     * @property string $name
+     * @property string $customer_id
+     * @property string $id
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereCustomerId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereEmail($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer wherePhone($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereTotalOrders($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereTotalSpent($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereActiveInstallments($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer wherePaymentScore($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereRiskLevel($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereSegment($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereJoinedDate($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereLastPurchase($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereAddress($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereBranchId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereBusinessId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereIsActive($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Customer>|Customer query()
@@ -965,6 +1051,24 @@ namespace App\Models\account {
     /**
      * App\Models\account\Staff
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property string|null $employment_type
+     * @property \Illuminate\Support\Carbon|null $hire_date
+     * @property float|null $salary
+     * @property string|null $department
+     * @property string|null $position
+     * @property string $user_id
+     * @property string $id
+     * @method static \Illuminate\Database\Eloquent\Builder<Staff>|Staff whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Staff>|Staff whereUserId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Staff>|Staff wherePosition($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Staff>|Staff whereDepartment($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Staff>|Staff whereSalary($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Staff>|Staff whereHireDate($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Staff>|Staff whereEmploymentType($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Staff>|Staff whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Staff>|Staff whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Staff>|Staff newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Staff>|Staff newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Staff>|Staff query()
@@ -1287,6 +1391,12 @@ namespace App\Models\analytic {
     /**
      * App\Models\analytic\Analytics
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property mixed $id
+     * @method static \Illuminate\Database\Eloquent\Builder<Analytics>|Analytics whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Analytics>|Analytics whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Analytics>|Analytics whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Analytics>|Analytics newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Analytics>|Analytics newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Analytics>|Analytics query()
@@ -1605,6 +1715,12 @@ namespace App\Models\analytic {
     /**
      * App\Models\analytic\Reports
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property mixed $id
+     * @method static \Illuminate\Database\Eloquent\Builder<Reports>|Reports whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Reports>|Reports whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Reports>|Reports whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Reports>|Reports newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Reports>|Reports newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Reports>|Reports query()
@@ -1925,9 +2041,339 @@ namespace App\Models\analytic {
 namespace App\Models\auth {
 
     /**
+     * App\Models\auth\EmailVerification
+     *
+     * @method static \Illuminate\Database\Eloquent\Builder<EmailVerification>|EmailVerification newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<EmailVerification>|EmailVerification newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<EmailVerification>|EmailVerification query()
+     * @method static mixed select($columns)
+     * @method static mixed selectSub($query, $as)
+     * @method static mixed selectExpression($expression, $as)
+     * @method static mixed selectRaw($expression, array $bindings)
+     * @method static mixed fromSub($query, $as)
+     * @method static mixed fromRaw($expression, $bindings)
+     * @method static mixed createSub($query)
+     * @method static mixed parseSub($query)
+     * @method static mixed prependDatabaseNameIfCrossDatabaseQuery($query)
+     * @method static mixed addSelect($column)
+     * @method static mixed selectVectorDistance($column, $vector, $as)
+     * @method static mixed distinct()
+     * @method static mixed from($table, $as)
+     * @method static mixed useIndex($index)
+     * @method static mixed forceIndex($index)
+     * @method static mixed ignoreIndex($index)
+     * @method static mixed join($table, $first, $operator, $second, $type, $where)
+     * @method static mixed joinWhere($table, $first, $operator, $second, $type)
+     * @method static mixed joinSub($query, $as, $first, $operator, $second, $type, $where)
+     * @method static mixed joinLateral($query, string $as, string $type)
+     * @method static mixed leftJoinLateral($query, string $as)
+     * @method static mixed leftJoin($table, $first, $operator, $second)
+     * @method static mixed leftJoinWhere($table, $first, $operator, $second)
+     * @method static mixed leftJoinSub($query, $as, $first, $operator, $second)
+     * @method static mixed rightJoin($table, $first, $operator, $second)
+     * @method static mixed rightJoinWhere($table, $first, $operator, $second)
+     * @method static mixed rightJoinSub($query, $as, $first, $operator, $second)
+     * @method static mixed crossJoin($table, $first, $operator, $second)
+     * @method static mixed crossJoinSub($query, $as)
+     * @method static mixed newJoinClause(self $parentQuery, $type, $table)
+     * @method static mixed newJoinLateralClause(self $parentQuery, $type, $table)
+     * @method static mixed mergeWheres($wheres, $bindings)
+     * @method static mixed where($column, $operator, $value, $boolean)
+     * @method static mixed addArrayOfWheres($column, $boolean, $method)
+     * @method static mixed prepareValueAndOperator($value, $operator, $useDefault)
+     * @method static mixed invalidOperatorAndValue($operator, $value)
+     * @method static mixed invalidOperator($operator)
+     * @method static mixed isBitwiseOperator($operator)
+     * @method static mixed orWhere($column, $operator, $value)
+     * @method static mixed whereNot($column, $operator, $value, $boolean)
+     * @method static mixed orWhereNot($column, $operator, $value)
+     * @method static mixed whereColumn($first, $operator, $second, $boolean)
+     * @method static mixed orWhereColumn($first, $operator, $second)
+     * @method static mixed whereVectorSimilarTo($column, $vector, $minSimilarity, $order)
+     * @method static mixed whereVectorDistanceLessThan($column, $vector, $maxDistance, $boolean)
+     * @method static mixed orWhereVectorDistanceLessThan($column, $vector, $maxDistance)
+     * @method static mixed whereRaw($sql, $bindings, $boolean)
+     * @method static mixed orWhereRaw($sql, $bindings)
+     * @method static mixed whereLike($column, $value, $caseSensitive, $boolean, $not)
+     * @method static mixed orWhereLike($column, $value, $caseSensitive)
+     * @method static mixed whereNotLike($column, $value, $caseSensitive, $boolean)
+     * @method static mixed orWhereNotLike($column, $value, $caseSensitive)
+     * @method static mixed whereNullSafeEquals($column, $value, $boolean)
+     * @method static mixed orWhereNullSafeEquals($column, $value)
+     * @method static mixed whereIn($column, $values, $boolean, $not)
+     * @method static mixed orWhereIn($column, $values)
+     * @method static mixed whereNotIn($column, $values, $boolean)
+     * @method static mixed orWhereNotIn($column, $values)
+     * @method static mixed whereIntegerInRaw($column, $values, $boolean, $not)
+     * @method static mixed orWhereIntegerInRaw($column, $values)
+     * @method static mixed whereIntegerNotInRaw($column, $values, $boolean)
+     * @method static mixed orWhereIntegerNotInRaw($column, $values)
+     * @method static mixed whereNull($columns, $boolean, $not)
+     * @method static mixed orWhereNull($column)
+     * @method static mixed whereNotNull($columns, $boolean)
+     * @method static mixed whereBetween($column, iterable $values, $boolean, $not)
+     * @method static mixed whereBetweenColumns($column, array $values, $boolean, $not)
+     * @method static mixed orWhereBetween($column, iterable $values)
+     * @method static mixed orWhereBetweenColumns($column, array $values)
+     * @method static mixed whereNotBetween($column, iterable $values, $boolean)
+     * @method static mixed whereNotBetweenColumns($column, array $values, $boolean)
+     * @method static mixed orWhereNotBetween($column, iterable $values)
+     * @method static mixed orWhereNotBetweenColumns($column, array $values)
+     * @method static mixed whereValueBetween($value, array $columns, $boolean, $not)
+     * @method static mixed orWhereValueBetween($value, array $columns)
+     * @method static mixed whereValueNotBetween($value, array $columns, $boolean)
+     * @method static mixed orWhereValueNotBetween($value, array $columns)
+     * @method static mixed orWhereNotNull($column)
+     * @method static mixed whereDate($column, $operator, $value, $boolean)
+     * @method static mixed orWhereDate($column, $operator, $value)
+     * @method static mixed whereTime($column, $operator, $value, $boolean)
+     * @method static mixed orWhereTime($column, $operator, $value)
+     * @method static mixed whereDay($column, $operator, $value, $boolean)
+     * @method static mixed orWhereDay($column, $operator, $value)
+     * @method static mixed whereMonth($column, $operator, $value, $boolean)
+     * @method static mixed orWhereMonth($column, $operator, $value)
+     * @method static mixed whereYear($column, $operator, $value, $boolean)
+     * @method static mixed orWhereYear($column, $operator, $value)
+     * @method static mixed addDateBasedWhere($type, $column, $operator, $value, $boolean)
+     * @method static mixed whereNested(Closure $callback, $boolean)
+     * @method static mixed forNestedWhere()
+     * @method static mixed addNestedWhereQuery($query, $boolean)
+     * @method static mixed whereSub($column, $operator, $callback, $boolean)
+     * @method static mixed whereExists($callback, $boolean, $not)
+     * @method static mixed orWhereExists($callback, $not)
+     * @method static mixed whereNotExists($callback, $boolean)
+     * @method static mixed orWhereNotExists($callback)
+     * @method static mixed addWhereExistsQuery(self $query, $boolean, $not)
+     * @method static mixed whereRowValues($columns, $operator, $values, $boolean)
+     * @method static mixed orWhereRowValues($columns, $operator, $values)
+     * @method static mixed whereJsonContains($column, $value, $boolean, $not)
+     * @method static mixed orWhereJsonContains($column, $value)
+     * @method static mixed whereJsonDoesntContain($column, $value, $boolean)
+     * @method static mixed orWhereJsonDoesntContain($column, $value)
+     * @method static mixed whereJsonOverlaps($column, $value, $boolean, $not)
+     * @method static mixed orWhereJsonOverlaps($column, $value)
+     * @method static mixed whereJsonDoesntOverlap($column, $value, $boolean)
+     * @method static mixed orWhereJsonDoesntOverlap($column, $value)
+     * @method static mixed whereJsonContainsKey($column, $boolean, $not)
+     * @method static mixed orWhereJsonContainsKey($column)
+     * @method static mixed whereJsonDoesntContainKey($column, $boolean)
+     * @method static mixed orWhereJsonDoesntContainKey($column)
+     * @method static mixed whereJsonLength($column, $operator, $value, $boolean)
+     * @method static mixed orWhereJsonLength($column, $operator, $value)
+     * @method static mixed dynamicWhere($method, $parameters)
+     * @method static mixed addDynamic($segment, $connector, $parameters, $index)
+     * @method static mixed whereFullText($columns, $value, array $options, $boolean)
+     * @method static mixed orWhereFullText($columns, $value, array $options)
+     * @method static mixed whereAll($columns, $operator, $value, $boolean)
+     * @method static mixed orWhereAll($columns, $operator, $value)
+     * @method static mixed whereAny($columns, $operator, $value, $boolean)
+     * @method static mixed orWhereAny($columns, $operator, $value)
+     * @method static mixed whereNone($columns, $operator, $value, $boolean)
+     * @method static mixed orWhereNone($columns, $operator, $value)
+     * @method static mixed groupBy($groups)
+     * @method static mixed groupByRaw($sql, array $bindings)
+     * @method static mixed having($column, $operator, $value, $boolean)
+     * @method static mixed orHaving($column, $operator, $value)
+     * @method static mixed havingNested(Closure $callback, $boolean)
+     * @method static mixed addNestedHavingQuery($query, $boolean)
+     * @method static mixed havingNull($columns, $boolean, $not)
+     * @method static mixed orHavingNull($column)
+     * @method static mixed havingNotNull($columns, $boolean)
+     * @method static mixed orHavingNotNull($column)
+     * @method static mixed havingBetween($column, iterable $values, $boolean, $not)
+     * @method static mixed havingNotBetween($column, iterable $values, $boolean)
+     * @method static mixed orHavingBetween($column, iterable $values)
+     * @method static mixed orHavingNotBetween($column, iterable $values)
+     * @method static mixed resolveDatePeriodBounds(DatePeriod $period)
+     * @method static mixed havingRaw($sql, array $bindings, $boolean)
+     * @method static mixed orHavingRaw($sql, array $bindings)
+     * @method static mixed orderBy($column, $direction)
+     * @method static mixed orderByDesc($column)
+     * @method static mixed latest($column)
+     * @method static mixed oldest($column)
+     * @method static mixed orderByVectorDistance($column, $vector)
+     * @method static mixed inRandomOrder($seed)
+     * @method static mixed inOrderOf($column, $values)
+     * @method static mixed orderByRaw($sql, $bindings)
+     * @method static mixed skip($value)
+     * @method static mixed offset($value)
+     * @method static mixed take($value)
+     * @method static mixed limit($value)
+     * @method static mixed groupLimit($value, $column)
+     * @method static mixed forPage($page, $perPage)
+     * @method static mixed forPageBeforeId($perPage, $lastId, $column)
+     * @method static mixed forPageAfterId($perPage, $lastId, $column)
+     * @method static mixed reorder($column, $direction)
+     * @method static mixed reorderDesc($column)
+     * @method static mixed removeExistingOrdersFor($column)
+     * @method static mixed union($query, $all)
+     * @method static mixed unionAll($query)
+     * @method static mixed lock($value)
+     * @method static mixed lockForUpdate()
+     * @method static mixed sharedLock()
+     * @method static \Illuminate\Database\Eloquent\Builder<EmailVerification>|EmailVerification timeout(int $seconds)
+     * @method static mixed beforeQuery(callable $callback)
+     * @method static mixed applyBeforeQueryCallbacks()
+     * @method static mixed afterQuery(Closure $callback)
+     * @method static mixed applyAfterQueryCallbacks($result)
+     * @method static mixed toSql()
+     * @method static mixed toRawSql()
+     * @method static mixed find($id, $columns)
+     * @method static mixed findOr($id, $columns, Closure $callback)
+     * @method static mixed value($column)
+     * @method static mixed rawValue(string $expression, array $bindings)
+     * @method static mixed soleValue($column)
+     * @method static mixed get($columns)
+     * @method static mixed runSelect()
+     * @method static mixed withoutGroupLimitKeys($items)
+     * @method static mixed paginate($perPage, $columns, $pageName, $page, $total)
+     * @method static mixed simplePaginate($perPage, $columns, $pageName, $page)
+     * @method static mixed cursorPaginate($perPage, $columns, $cursorName, $cursor)
+     * @method static mixed ensureOrderForCursorPagination($shouldReverse)
+     * @method static mixed getCountForPagination($columns)
+     * @method static mixed runPaginationCountQuery($columns)
+     * @method static mixed cloneForPaginationCount()
+     * @method static mixed withoutSelectAliases(array $columns)
+     * @method static mixed cursor()
+     * @method static mixed enforceOrderBy()
+     * @method static mixed pluck($column, $key)
+     * @method static mixed stripTableForPluck($column)
+     * @method static mixed pluckFromObjectColumn($queryResult, $column, $key)
+     * @method static mixed pluckFromArrayColumn($queryResult, $column, $key)
+     * @method static mixed implode($column, $glue)
+     * @method static mixed exists()
+     * @method static mixed doesntExist()
+     * @method static mixed existsOr(Closure $callback)
+     * @method static mixed doesntExistOr(Closure $callback)
+     * @method static mixed count($columns)
+     * @method static mixed min($column)
+     * @method static mixed max($column)
+     * @method static mixed sum($column)
+     * @method static mixed avg($column)
+     * @method static mixed average($column)
+     * @method static mixed aggregate($function, $columns)
+     * @method static mixed numericAggregate($function, $columns)
+     * @method static mixed setAggregate($function, $columns)
+     * @method static mixed onceWithColumns($columns, $callback)
+     * @method static mixed insert(array $values)
+     * @method static mixed insertOrIgnore(array $values)
+     * @method static mixed insertGetId(array $values, $sequence)
+     * @method static mixed insertUsing(array $columns, $query)
+     * @method static mixed insertOrIgnoreUsing(array $columns, $query)
+     * @method static mixed update(array $values)
+     * @method static mixed updateFrom(array $values)
+     * @method static mixed updateOrInsert(array $attributes, callable|array $values)
+     * @method static mixed upsert(array $values, array|string $uniqueBy, array $update)
+     * @method static mixed increment($column, $amount, array $extra)
+     * @method static mixed incrementEach(array $columns, array $extra)
+     * @method static mixed decrement($column, $amount, array $extra)
+     * @method static mixed decrementEach(array $columns, array $extra)
+     * @method static mixed delete($id)
+     * @method static mixed truncate()
+     * @method static mixed newQuery()
+     * @method static mixed forSubQuery()
+     * @method static mixed getColumns()
+     * @method static mixed raw($value)
+     * @method static mixed getUnionBuilders()
+     * @method static mixed getLimit()
+     * @method static mixed getOffset()
+     * @method static mixed getBindings()
+     * @method static mixed getRawBindings()
+     * @method static mixed setBindings(array $bindings, $type)
+     * @method static mixed addBinding($value, $type)
+     * @method static mixed castBinding($value)
+     * @method static mixed mergeBindings(self $query)
+     * @method static mixed cleanBindings(array $bindings)
+     * @method static mixed flattenValue($value)
+     * @method static mixed defaultKeyName()
+     * @method static mixed getConnection()
+     * @method static mixed ensureConnectionSupportsVectors()
+     * @method static mixed getProcessor()
+     * @method static mixed getGrammar()
+     * @method static mixed useWritePdo()
+     * @method static mixed isQueryable($value)
+     * @method static mixed clone()
+     * @method static mixed cloneWithout(array $properties)
+     * @method static mixed cloneWithoutBindings(array $except)
+     * @method static mixed dump($args)
+     * @method static mixed dumpRawSql()
+     * @method static mixed dd()
+     * @method static mixed ddRawSql()
+     * @method static mixed wherePast($columns)
+     * @method static mixed whereNowOrPast($columns)
+     * @method static mixed orWherePast($columns)
+     * @method static mixed orWhereNowOrPast($columns)
+     * @method static mixed whereFuture($columns)
+     * @method static mixed whereNowOrFuture($columns)
+     * @method static mixed orWhereFuture($columns)
+     * @method static mixed orWhereNowOrFuture($columns)
+     * @method static mixed wherePastOrFuture($columns, $operator, $boolean)
+     * @method static mixed whereToday($columns, $boolean)
+     * @method static mixed whereBeforeToday($columns)
+     * @method static mixed whereTodayOrBefore($columns)
+     * @method static mixed whereAfterToday($columns)
+     * @method static mixed whereTodayOrAfter($columns)
+     * @method static mixed orWhereToday($columns)
+     * @method static mixed orWhereBeforeToday($columns)
+     * @method static mixed orWhereTodayOrBefore($columns)
+     * @method static mixed orWhereAfterToday($columns)
+     * @method static mixed orWhereTodayOrAfter($columns)
+     * @method static mixed whereTodayBeforeOrAfter($columns, $operator, $boolean)
+     * @method static mixed chunk($count, callable $callback)
+     * @method static mixed chunkMap(callable $callback, $count)
+     * @method static mixed each(callable $callback, $count)
+     * @method static mixed chunkById($count, callable $callback, $column, $alias)
+     * @method static mixed chunkByIdDesc($count, callable $callback, $column, $alias)
+     * @method static mixed orderedChunkById($count, callable $callback, $column, $alias, $descending)
+     * @method static mixed eachById(callable $callback, $count, $column, $alias)
+     * @method static mixed lazy($chunkSize)
+     * @method static mixed lazyById($chunkSize, $column, $alias)
+     * @method static mixed lazyByIdDesc($chunkSize, $column, $alias)
+     * @method static mixed orderedLazyById($chunkSize, $column, $alias, $descending)
+     * @method static mixed first($columns)
+     * @method static mixed firstOrFail($columns, $message)
+     * @method static mixed sole($columns)
+     * @method static mixed paginateUsingCursor($perPage, $columns, $cursorName, $cursor)
+     * @method static mixed getOriginalColumnNameForCursorPagination($builder, string $parameter)
+     * @method static mixed paginator($items, $total, $perPage, $currentPage, $options)
+     * @method static mixed simplePaginator($items, $perPage, $currentPage, $options)
+     * @method static mixed cursorPaginator($items, $perPage, $cursor, $options)
+     * @method static mixed tap($callback)
+     * @method static mixed pipe($callback)
+     * @method static mixed when($value, callable $callback, callable $default)
+     * @method static mixed unless($value, callable $callback, callable $default)
+     * @method static mixed explain()
+     * @method static mixed forwardCallTo($object, $method, $parameters)
+     * @method static mixed forwardDecoratedCallTo($object, $method, $parameters)
+     * @method static mixed throwBadMethodCallException($method)
+     * @method static mixed macro($name, $macro)
+     * @method static mixed mixin($mixin, $replace)
+     * @method static mixed hasMacro($name)
+     * @method static mixed flushMacros()
+     * @method static mixed macroCall($method, $parameters)
+     * @mixin \Illuminate\Database\Query\Builder
+     */
+    class EmailVerification extends \Illuminate\Database\Eloquent\Model
+    {
+        //
+    }
+
+    /**
      * App\Models\auth\Role
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property bool $is_active
+     * @property string $business_id
+     * @property string $role_name
+     * @property string $id
      * @property-read \App\Models\account\Business $business
+     * @method static \Illuminate\Database\Eloquent\Builder<Role>|Role whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Role>|Role whereRoleName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Role>|Role whereBusinessId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Role>|Role whereIsActive($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Role>|Role whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Role>|Role whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Role>|Role newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Role>|Role newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Role>|Role query()
@@ -2249,18 +2695,44 @@ namespace App\Models\auth {
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
      * @property string|null $remember_token
+     * @property bool $is_active
+     * @property string $business_id
+     * @property string|null $emergency_contact_relationship
+     * @property string|null $emergency_contact_phone
+     * @property string|null $emergency_contact_name
+     * @property string|null $branch_id
+     * @property string|null $role_id
+     * @property string $user_type
+     * @property string|null $avatar
+     * @property bool $is_verified
+     * @property string|null $verification_token
+     * @property string $location
+     * @property string $contact
+     * @property string $email
      * @property string $password
      * @property \Illuminate\Support\Carbon|null $email_verified_at
-     * @property string $email
      * @property string $name
-     * @property mixed $id
+     * @property string $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
      * @property-read int|null $notifications_count
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereName($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmail($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmailVerifiedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User wherePassword($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmail($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereContact($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereLocation($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereVerificationToken($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereIsVerified($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereAvatar($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereUserType($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereRoleId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereBranchId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmergencyContactName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmergencyContactPhone($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmergencyContactRelationship($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereBusinessId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereIsActive($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereRememberToken($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereCreatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereUpdatedAt($value)
@@ -2586,10 +3058,26 @@ namespace App\Models\inventory {
     /**
      * App\Models\inventory\Inventory
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property \Illuminate\Support\Carbon|null $last_restocked
+     * @property string $status
+     * @property mixed $reorder_point
+     * @property mixed $total_stock
+     * @property string|null $variant_id
+     * @property string $id
      * @property-read mixed $computed_status
      * @property-read \App\Models\product\ProductVariant $variant
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\inventory\InventoryLocation> $locations
      * @property-read int|null $locations_count
+     * @method static \Illuminate\Database\Eloquent\Builder<Inventory>|Inventory whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Inventory>|Inventory whereVariantId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Inventory>|Inventory whereTotalStock($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Inventory>|Inventory whereReorderPoint($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Inventory>|Inventory whereStatus($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Inventory>|Inventory whereLastRestocked($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Inventory>|Inventory whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Inventory>|Inventory whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Inventory>|Inventory newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Inventory>|Inventory newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Inventory>|Inventory query()
@@ -2908,8 +3396,20 @@ namespace App\Models\inventory {
     /**
      * App\Models\inventory\InventoryLocation
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property mixed $reorder_point
+     * @property mixed $stock
+     * @property string $name
+     * @property string $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\inventory\Inventory> $inventories
      * @property-read int|null $inventories_count
+     * @method static \Illuminate\Database\Eloquent\Builder<InventoryLocation>|InventoryLocation whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<InventoryLocation>|InventoryLocation whereName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<InventoryLocation>|InventoryLocation whereStock($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<InventoryLocation>|InventoryLocation whereReorderPoint($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<InventoryLocation>|InventoryLocation whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<InventoryLocation>|InventoryLocation whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<InventoryLocation>|InventoryLocation newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<InventoryLocation>|InventoryLocation newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<InventoryLocation>|InventoryLocation query()
@@ -3232,6 +3732,38 @@ namespace App\Models\order {
     /**
      * App\Models\order\LipaMdogo
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property mixed $days_overdue
+     * @property string $start_date
+     * @property string $payment_method
+     * @property string $status
+     * @property string $next_payment_date
+     * @property string $frequency
+     * @property float $installment_amount
+     * @property mixed $installments
+     * @property float $remaining_amount
+     * @property float $paid_amount
+     * @property float $total_amount
+     * @property string|null $order_id
+     * @property string $plan_id
+     * @property string $id
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo wherePlanId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo whereOrderId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo whereTotalAmount($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo wherePaidAmount($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo whereRemainingAmount($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo whereInstallments($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo whereInstallmentAmount($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo whereFrequency($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo whereNextPaymentDate($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo whereStatus($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo wherePaymentMethod($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo whereStartDate($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo whereDaysOverdue($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<LipaMdogo>|LipaMdogo query()
@@ -3550,7 +4082,23 @@ namespace App\Models\order {
     /**
      * App\Models\order\OrderItems
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property float $total
+     * @property float $price
+     * @property mixed $quantity
+     * @property string $product_name
+     * @property string $order_id
+     * @property string $id
      * @property-read \App\Models\order\Orders $order
+     * @method static \Illuminate\Database\Eloquent\Builder<OrderItems>|OrderItems whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<OrderItems>|OrderItems whereOrderId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<OrderItems>|OrderItems whereProductName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<OrderItems>|OrderItems whereQuantity($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<OrderItems>|OrderItems wherePrice($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<OrderItems>|OrderItems whereTotal($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<OrderItems>|OrderItems whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<OrderItems>|OrderItems whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<OrderItems>|OrderItems newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<OrderItems>|OrderItems newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<OrderItems>|OrderItems query()
@@ -3869,10 +4417,40 @@ namespace App\Models\order {
     /**
      * App\Models\order\Orders
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property string $business_id
+     * @property string|null $branch_id
+     * @property string|null $shipping_address
+     * @property string $created_at_date
+     * @property string $status
+     * @property string $payment_type
+     * @property float $total
+     * @property mixed $items
+     * @property string $phone
+     * @property string|null $email
+     * @property string|null $customer_id
+     * @property string $order_id
+     * @property string $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\order\OrderItems> $items
      * @property-read int|null $items_count
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\order\LipaMdogo> $plans
      * @property-read int|null $plans_count
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders whereOrderId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders whereCustomerId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders whereEmail($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders wherePhone($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders whereItems($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders whereTotal($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders wherePaymentType($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders whereStatus($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders whereCreatedAtDate($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders whereShippingAddress($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders whereBranchId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders whereBusinessId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Orders>|Orders query()
@@ -4195,6 +4773,28 @@ namespace App\Models\payment {
     /**
      * App\Models\payment\Expenses
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property string $business_id
+     * @property string|null $branch_id
+     * @property string|null $description
+     * @property string $method
+     * @property string $date
+     * @property float $amount
+     * @property string $category
+     * @property string $expense_id
+     * @property string $id
+     * @method static \Illuminate\Database\Eloquent\Builder<Expenses>|Expenses whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Expenses>|Expenses whereExpenseId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Expenses>|Expenses whereCategory($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Expenses>|Expenses whereAmount($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Expenses>|Expenses whereDate($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Expenses>|Expenses whereMethod($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Expenses>|Expenses whereDescription($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Expenses>|Expenses whereBranchId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Expenses>|Expenses whereBusinessId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Expenses>|Expenses whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Expenses>|Expenses whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Expenses>|Expenses newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Expenses>|Expenses newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Expenses>|Expenses query()
@@ -4513,10 +5113,42 @@ namespace App\Models\payment {
     /**
      * App\Models\payment\Invoice
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property bool $is_sent
+     * @property string|null $file_path
+     * @property string|null $notes
+     * @property mixed $status
+     * @property string $due_date
+     * @property string $issue_date
+     * @property float $balance
+     * @property float $paid_amount
+     * @property float $amount
+     * @property string $invoice_number
+     * @property string $business_id
+     * @property string $customer_id
+     * @property string $order_id
+     * @property string $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\payment\Transaction> $payment
      * @property-read int|null $payment_count
      * @property-read \App\Models\account\Customer $cutomer
      * @property-read \App\Models\order\Orders $order
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereOrderId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereCustomerId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereBusinessId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereInvoiceNumber($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereAmount($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice wherePaidAmount($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereBalance($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereIssueDate($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereDueDate($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereStatus($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereNotes($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereFilePath($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereIsSent($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Invoice>|Invoice query()
@@ -4835,6 +5467,39 @@ namespace App\Models\payment {
     /**
      * App\Models\payment\Transaction
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property string|null $invoice_id
+     * @property string $business_id
+     * @property string|null $branch_id
+     * @property string|null $notes
+     * @property string $date
+     * @property string|null $customer_id
+     * @property string $status
+     * @property string $trans_type
+     * @property float $amount
+     * @property string|null $trans_code
+     * @property string $payment_method
+     * @property string $ref_code
+     * @property string $transaction_id
+     * @property string $id
+     * @property-read \App\Models\payment\Invoice $payment
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereTransactionId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereRefCode($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction wherePaymentMethod($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereTransCode($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereAmount($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereTransType($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereStatus($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereCustomerId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereDate($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereNotes($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereBranchId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereBusinessId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereInvoiceId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Transaction>|Transaction query()
@@ -5157,9 +5822,33 @@ namespace App\Models\product {
     /**
      * App\Models\product\ProductCatalog
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property string $is_available
+     * @property string|null $business_id
+     * @property string|null $branch_id
+     * @property string|null $category_id
+     * @property string|null $image_url
+     * @property string|null $description
+     * @property string|null $brand
+     * @property string $name
+     * @property string $product_id
+     * @property string $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\product\ProductVariant> $variants
      * @property-read int|null $variants_count
      * @property-read \App\Models\product\ProductCategory $category
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog whereProductId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog whereName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog whereBrand($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog whereDescription($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog whereImageUrl($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog whereCategoryId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog whereBranchId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog whereBusinessId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog whereIsAvailable($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<ProductCatalog>|ProductCatalog query()
@@ -5478,8 +6167,24 @@ namespace App\Models\product {
     /**
      * App\Models\product\ProductCategory
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property string $business_id
+     * @property bool $description
+     * @property string $name
+     * @property string $icon
+     * @property string $category_id
+     * @property string $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\product\ProductCatalog> $category
      * @property-read int|null $category_count
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCategory>|ProductCategory whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCategory>|ProductCategory whereCategoryId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCategory>|ProductCategory whereIcon($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCategory>|ProductCategory whereName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCategory>|ProductCategory whereDescription($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCategory>|ProductCategory whereBusinessId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCategory>|ProductCategory whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductCategory>|ProductCategory whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<ProductCategory>|ProductCategory newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<ProductCategory>|ProductCategory newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<ProductCategory>|ProductCategory query()
@@ -5798,8 +6503,32 @@ namespace App\Models\product {
     /**
      * App\Models\product\ProductVariant
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property bool $is_available
+     * @property mixed $instock
+     * @property float $sell_price
+     * @property float $buy_price
+     * @property string|null $size
+     * @property string|null $color
+     * @property string $sku
+     * @property string|null $product_id
+     * @property string $variant_id
+     * @property string $id
      * @property-read \App\Models\product\ProductCatalog $product
      * @property-read \App\Models\inventory\Inventory $inventory
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant whereVariantId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant whereProductId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant whereSku($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant whereColor($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant whereSize($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant whereBuyPrice($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant whereSellPrice($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant whereInstock($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant whereIsAvailable($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<ProductVariant>|ProductVariant query()

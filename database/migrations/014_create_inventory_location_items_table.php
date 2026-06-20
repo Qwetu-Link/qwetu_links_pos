@@ -35,7 +35,10 @@ return new class extends Migration
                 ->cascadeOnDelete();
 
             // Prevent duplicate pairs
-            $table->unique(['inventory_id', 'inventory_location_id']);
+            $table->unique(
+                ['inventory_id', 'inventory_location_id'],
+                'inv_loc_unique'
+            );
         });
     }
 

@@ -23,7 +23,11 @@ class StoreInventoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'variant_id',
+            'total_stock' => 'required|numeric|min:0',
+            'reorder_point',
+            'status',
+            'last_restocked',
         ];
     }
 }

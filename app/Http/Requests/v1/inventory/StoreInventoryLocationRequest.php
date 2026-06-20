@@ -23,7 +23,9 @@ class StoreInventoryLocationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'stock' => 'required|numeric|min:0',
+            'reorder_point',
         ];
     }
 }

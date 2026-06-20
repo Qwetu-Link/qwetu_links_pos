@@ -19,12 +19,12 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('image_url')->nullable();
             $table->string('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('product_categories')->onDelete('cascade');
+            // $table->foreign('category_id')->references('id')->on('product_categories')->onDelete('cascade');
             $table->string('branch_id')->nullable();
-            $table->foreign('branch_id')->references('id')->on('branches')->onDelete('cascade');
-            $table->string('business_id');
-            $table->foreign('business_id')->references('id')->on('businesses')->onDelete('cascade');
-            $table->boolean('is_available')->default(true);
+            // $table->foreign('branch_id')->references('id')->on('branches')->onDelete('cascade');
+            $table->string('business_id')->nullable();
+            // $table->foreign('business_id')->references('id')->on('businesses')->onDelete('cascade');
+            $table->string('is_available');
             $table->timestamps();
         });
     }

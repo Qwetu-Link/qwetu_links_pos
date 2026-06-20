@@ -24,7 +24,7 @@
                 <a href="#pricing-plans">Pricing</a>
                 <a href="#why">Why Us</a>
                 <a href="#contact">Contact</a>
-                <a href="#" class="btn-outline">Login / Sign Up</a>
+                <a href="{{ route('login') }}" class="btn-outline">Login / Sign Up</a>
             </div>
         </div>
     </div>
